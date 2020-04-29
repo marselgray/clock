@@ -130,7 +130,7 @@ function makeStars(element){
 	let fullWidth = element.clientWidth;
 	let fullHeight = element.clientHeight;
 
-	let numOfStars = ~~(Math.random()*50)+20; 
+	let numOfStars = ~~(Math.random()*50)+20;
 	let size = 0;
 	let posX = 0;
 	let posY = 0;
