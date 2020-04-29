@@ -62,7 +62,7 @@ function showLondonTime(){
 // determines position of solar objects
 // parameters are the current time (now) for that location
 // and the 3 elements of moon, sun, and card
-function solarObjects(now, el1, el2, el3) {
+function solarObjects(now, el1, el2, el3, el4) {
 	hour = now;
 
 	if (hour >= 0 && hour < 5) {
@@ -110,5 +110,36 @@ function solarObjects(now, el1, el2, el3) {
 		el3.style.background  = "#002551";
 	}
 
+}
+
+
+
+// only puts stars into solar object container if sun is hidden
+let sun = document.getElementsByClassName('solarcontainer--sun');
+for (let i = 0; i < sun.length; i++){
+	if (sun[i].style.top === '500px'){
+		makeStars(sun[i].parentElement);
+	}
+}
+
+
+////makes random stars in night sky
+function makeStars(element){
+
+	let skyContainer = element;
+	let fullWidth = element.clientWidth;
+	let fullHeight = element.clientHeight;
+
+	let numOfStars = ~~(Math.random()*50)+20; 
+	let size = 0;
+	let posX = 0;
+	let posY = 0;
+
+	for( let i=0; i<numOfStars; i++ ){
+		size = ~~(Math.random()*10);
+		posX = ~~(Math.random()*fullWidth);
+		posY = ~~(Math.random()*fullHeight);
+		skyContainer.innerHTML += `<span class="star" style="width: ${size}px; height: ${size}px; top: ${posY}px; left: ${posX}px"></span>`   
+	}
 }
 
