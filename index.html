@@ -15,9 +15,14 @@
 
 	<main class="main">
 		<div class="container">
+
 			<div class="card" id='card--london' data-aos="fade-down"
 				data-aos-easing="linear"
 				data-aos-duration="1500">
+
+				<p class="card--office">London, UK Office</p>
+				<div id='london-clock' class="card--clock" onload="showLondonTime()"></div>
+
 				<div class="solarcontainer" id='container--london'>
 					<div class="solarcontainer--sun" id='sun--london'>
 						<div class="solarcontainer--sun__sunbeams">
@@ -48,14 +53,16 @@
 						</div>
 					</div>
 				</div>
-	
-				<p class="card--office">London, UK Office</p>
-				<div id='london-clock' class="card--clock" onload="showLondonTime()"></div>
+
 			</div>
 		
 			<div class="card" id='card--dc' data-aos="fade-down"
 				data-aos-easing="linear"
 				data-aos-duration="1500">
+
+				<p class="card--office">DC Office</p>
+				<div id='dc-clock' class="card--clock" onload="showDCTime()"></div>
+
 				<div class="solarcontainer" id='container--dc'>
 					<div class="solarcontainer--sun" id='sun--dc'>
 						<div class="solarcontainer--sun__sunbeams">
@@ -87,13 +94,15 @@
 					</div>
 				</div>
 	
-				<p class="card--office">DC Office</p>
-				<div id='dc-clock' class="card--clock" onload="showDCTime()"></div>
 			</div>
 		
 			<div class="card" id='card--west' data-aos="fade-down"
 				data-aos-easing="linear"
 				data-aos-duration="1500">
+
+				<p class="card--office">California Office</p>
+				<div id='sanfran-clock' class="card--clock" onload="showSanFranTime()"></div>
+				
 				<div class="solarcontainer" id='container--west'>
 					<div class="solarcontainer--sun" id='sun--west'>
 						<div class="solarcontainer--sun__sunbeams">
@@ -124,8 +133,6 @@
 						</div>
 					</div>
 				</div>
-				<p class="card--office">California Office</p>
-				<div id='sanfran-clock' class="card--clock" onload="showSanFranTime()"></div>
 			</div>
 	
 		</div>

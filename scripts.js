@@ -114,7 +114,7 @@ function solarObjects(now, el1, el2, el3, el4) {
 
 
 
-// only puts stars into solar object container if sun is hidden
+// only puts stars into solar object container if sun is hidden aka night
 let sun = document.getElementsByClassName('solarcontainer--sun');
 for (let i = 0; i < sun.length; i++){
 	if (sun[i].style.top === '500px'){
