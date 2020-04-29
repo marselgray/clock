@@ -46,7 +46,8 @@ body {
     display: inline-block;
     position: absolute;
     top: 5rem;
-    left: 9rem;
+    left: 50%;
+    transform: translate(-50%);
     transition: top 0.1s ease; }
     .solarcontainer--sun__sunbeams {
       width: 25rem;
@@ -70,7 +71,8 @@ body {
     display: inline-block;
     position: absolute;
     top: 50px;
-    left: 90px;
+    left: 50%;
+    transform: translate(-50%);
     transition: top 0.1s ease; }
     .solarcontainer--moon__crater {
       position: absolute;

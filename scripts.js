@@ -5,7 +5,8 @@ showSanFranTime();
 
 // calculate the time in San Francisco
 function showSanFranTime(){
-	let date = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
+	let date = new Date().toLocaleString("en-US", {timeZone: "Asia/Singapore"});
+	//let date = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
 	date = new Date(date);
 	var h = date.getHours(); // 0 - 23
 	var m = date.getMinutes(); // 0 - 59
@@ -14,11 +15,11 @@ function showSanFranTime(){
 	m = (m < 10) ? "0" + m : m;
 
 	var time = h + ":" + m;
+	document.getElementById("sanfran-clock").textContent = time;
 
 	solarObjects(h, document.getElementById('moon--west'), document.getElementById('sun--west'), document.getElementById('card--west'));
 	
 	setTimeout(showSanFranTime, 1000);
-	document.getElementById("sanfran-clock").textContent = time;
 }
 
 // calculate the time in DC
@@ -32,11 +33,11 @@ function showDCTime(){
 	m = (m < 10) ? "0" + m : m;
 
 	var time = h + ":" + m;
+	document.getElementById("dc-clock").textContent = time;
 
 	solarObjects(h, document.getElementById('moon--dc'), document.getElementById('sun--dc'), document.getElementById('card--dc'));
 
 	setTimeout(showDCTime, 1000);
-	document.getElementById("dc-clock").textContent = time;
 }
 
 // calculate the time in London
@@ -50,11 +51,11 @@ function showLondonTime(){
 	m = (m < 10) ? "0" + m : m;
 
 	var time = h + ":" + m;
+	document.getElementById("london-clock").textContent = time;
 
 	solarObjects(h, document.getElementById('moon--london'), document.getElementById('sun--london'), document.getElementById('card--london'));
 
 	setTimeout(showLondonTime, 1000);
-	document.getElementById("london-clock").textContent = time;
 }
 
 
@@ -72,7 +73,7 @@ function solarObjects(now, el1, el2, el3) {
 		var moon = el1;
 		var sun = el2;
 		moon.style.top = moonheight + "px";
-		sun.style.top = "450px";
+		sun.style.top = "500px";
 		el3.style.backgroundColor = "#002551";
 	}
 	if (hour >= 5 && hour < 12) {
@@ -83,7 +84,7 @@ function solarObjects(now, el1, el2, el3) {
 		var sun = el2;
 		var moon = el1;
 		sun.style.top = sunheight + "px";
-		moon.style.top = "400px";
+		moon.style.top = "500px";
 		el3.style.backgroundColor  = "#f4c042";
 	}
 	if (hour >= 12 && hour < 19) {
@@ -94,7 +95,7 @@ function solarObjects(now, el1, el2, el3) {
 		var sun = el2;
 		var moon = el1;
 		sun.style.top = sunheight + "px";
-		moon.style.top = "400px";
+		moon.style.top = "500px";
 		el3.style.backgroundColor  = "#f4c042";
 	}
 	if (hour >= 19 && hour <= 23) {

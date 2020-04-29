@@ -14,7 +14,8 @@
 		display: inline-block;
 		position:absolute;
 		top: 5rem;
-		left:9rem;
+		left: 50%;
+		transform: translate(-50%);
 		transition: top 0.1s ease;
 
 		&__sunbeams {
@@ -44,9 +45,10 @@
 		background: $moon;
 		border-radius: 50%;
 		display: inline-block;
-		position:absolute;
-		top:50px;
-		left:90px;
+		position: absolute;
+		top: 50px;
+		left: 50%;
+		transform: translate(-50%);
 		transition: top 0.1s ease;
 
 		&__crater {
