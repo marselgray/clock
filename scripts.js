@@ -5,8 +5,8 @@ showSanFranTime();
 
 // calculate the time in San Francisco
 function showSanFranTime(){
-	// let date = new Date().toLocaleString("en-US", {timeZone: "Asia/Singapore"});
-	let date = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
+	let date = new Date().toLocaleString("en-US", {timeZone: "Asia/Singapore"});
+	// let date = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
 	date = new Date(date);
 	var h = date.getHours(); // 0 - 23
 	var m = date.getMinutes(); // 0 - 59
