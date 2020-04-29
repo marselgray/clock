@@ -76,7 +76,7 @@ body {
     .solarcontainer--sun__beam {
       width: 5px;
       height: 3rem;
-      background: #fcb20e;
+      background: #FF8C00;
       position: absolute; }
       .solarcontainer--sun__beam-1 {
         transform: rotate(0deg);
