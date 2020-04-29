@@ -74,7 +74,7 @@ function solarObjects(now, el1, el2, el3) {
 		var sun = el2;
 		moon.style.top = moonheight + "px";
 		sun.style.top = "500px";
-		el3.style.backgroundColor = "#002551";
+		el3.style.background = "#002551";
 	}
 	if (hour >= 5 && hour < 12) {
 		timeofdaypercent = hour - 5;
@@ -85,7 +85,7 @@ function solarObjects(now, el1, el2, el3) {
 		var moon = el1;
 		sun.style.top = sunheight + "px";
 		moon.style.top = "500px";
-		el3.style.backgroundColor  = "#f4c042";
+		el3.style.background  = "#87CEEB";
 	}
 	if (hour >= 12 && hour < 19) {
 		timeofdaypercent = hour - 12;
@@ -96,7 +96,7 @@ function solarObjects(now, el1, el2, el3) {
 		var moon = el1;
 		sun.style.top = sunheight + "px";
 		moon.style.top = "500px";
-		el3.style.backgroundColor  = "#f4c042";
+		el3.style.background  = "#87CEEB";
 	}
 	if (hour >= 19 && hour <= 23) {
 		timeofdaypercent = hour - 20;
@@ -107,7 +107,7 @@ function solarObjects(now, el1, el2, el3) {
 		var sun = el2;
 		moon.style.top = moonheight + "px";
 		sun.style.top = "500px";
-		el3.style.backgroundColor  = "#002551";
+		el3.style.background  = "#002551";
 	}
 
 }

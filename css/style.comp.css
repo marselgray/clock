@@ -58,7 +58,7 @@ body {
   .solarcontainer--sun {
     height: 20rem;
     width: 20rem;
-    background: linear-gradient(40deg, #FF0080, #FF8C00 70%);
+    background: #fcb20e;
     border-radius: 50%;
     display: inline-block;
     position: absolute;
@@ -76,7 +76,7 @@ body {
     .solarcontainer--sun__beam {
       width: 5px;
       height: 3rem;
-      background: linear-gradient(40deg, #FF0080, #FF8C00 70%);
+      background: #fcb20e;
       position: absolute; }
       .solarcontainer--sun__beam-1 {
         transform: rotate(0deg);
