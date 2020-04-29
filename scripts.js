@@ -5,8 +5,7 @@ showSanFranTime();
 
 // calculate the time in San Francisco
 function showSanFranTime(){
-	// let date = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
-	let date = new Date().toLocaleString("en-US", {timeZone: "Asia/Singapore"});
+	let date = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
 	date = new Date(date);
 	var h = date.getHours(); // 0 - 23
 	var m = date.getMinutes(); // 0 - 59
@@ -60,6 +59,8 @@ function showLondonTime(){
 
 
 // determines position of solar objects
+// parameters are the current time (now) for that location
+// and the 3 elements of moon, sun, and card
 function solarObjects(now, el1, el2, el3) {
 	hour = now;
 
@@ -96,7 +97,7 @@ function solarObjects(now, el1, el2, el3) {
 		moon.style.top = "400px";
 		el3.style.backgroundColor  = "#f4c042";
 	}
-	if (hour >= 19 && hour <= 24) {
+	if (hour >= 19 && hour <= 23) {
 		timeofdaypercent = hour - 20;
 		timeofdaypercent = (timeofdaypercent / 5) * 100;
 		var moonheight = 200 - (timeofdaypercent * 2.5) + 50;
@@ -104,7 +105,7 @@ function solarObjects(now, el1, el2, el3) {
 		var moon = el1;
 		var sun = el2;
 		moon.style.top = moonheight + "px";
-		sun.style.top = "450px";
+		sun.style.top = "500px";
 		el3.style.backgroundColor  = "#002551";
 	}
 

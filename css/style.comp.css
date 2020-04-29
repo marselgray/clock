@@ -20,7 +20,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   font-size: 4rem; }
-  @media (min-width: 56.25em) {
+  @media (min-width: 75em) {
     .container {
       flex-direction: row-reverse; } }
 

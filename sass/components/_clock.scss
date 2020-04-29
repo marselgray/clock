@@ -4,7 +4,7 @@
 	justify-content: space-between;
 	font-size: 4rem;
 
-	@include breakpoint(medium){
+	@include breakpoint(large){
 		flex-direction: row-reverse;
 	}
 }
