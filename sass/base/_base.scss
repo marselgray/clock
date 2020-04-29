@@ -1,0 +1,59 @@
+/* CSS reset */
+*, 
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+*:focus{
+	outline: none;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+
+body{
+	box-sizing: border-box;
+}
+
+// mobile first design
+@mixin breakpoint($breakpoint) {
+	@if $breakpoint == small {
+		@media (min-width: 37.5em){
+			@content;
+		}
+	}
+
+	@if $breakpoint == medium {
+		@media (min-width: 56.25em){
+			@content;
+		}
+	}
+
+	@if $breakpoint == large {
+		@media (min-width: 75em){
+			@content;
+		}
+	}
+
+	@if $breakpoint == xlarge {
+		@media (min-width: 112.5em){
+			@content;
+		}
+	}
+}
+
+// Colors
+$white: #fff;
+$black: #000;
+$grey: #D3D3D3;
+
+$night: #26242E;
+$day: #87CEEB;
+
+$moon: linear-gradient(40deg, #8983F7, #A3DAFB 70%);
+$sun: linear-gradient(40deg, #FF0080,#FF8C00 70%);

@@ -2,7 +2,7 @@
   "name": "clock",
   "version": "1.0.0",
   "description": "Clock",
-  "main": "scripts.js",
+  "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "devserver": "live-server",

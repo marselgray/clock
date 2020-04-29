@@ -1,1 +1,5 @@
 # clock
+
+
+## Planning
+calculate time
