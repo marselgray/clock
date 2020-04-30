@@ -1,7 +1,8 @@
 .main{
-	height: 100vh;
+	background: #0082cb;
 
 	@include breakpoint(large){
+		height: 100vh;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;

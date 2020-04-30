@@ -62,22 +62,9 @@ function showLondonTime(){
 // determines position of solar objects
 // parameters are the current time (now) for that location
 // and the 3 elements of moon, sun, and card
-function solarObjects(now, el1, el2, el3, el4) {
+function solarObjects(now, el1, el2, el3) {
 	hour = now;
 
-
-	/* new time intervals
-	1. night to early morning hour (night colors)    (0, 1, 2, 3, 4)  >= 0 && hour < 5
-	2. early morning hour (sunrise colors)           (5, 6, 7, 8)     >= 5 && hour < 9
-	3. morning to noon (sky colors)                  (9, 10, 11)  >= 9 && hour < 12
-	4. noonish to afternnon (sky colors)             (12, 13, 14, 15 )  >= 12 && hour < 16
-	5. evening to sunset (sky colors)                (16, 17)  >= 16 && hour < 18
-	6. sunset (sunset colors)                        (18, 19, 20)  >= 18 && hour < 21
-	7. evening night (night colors)                  (21, 22, 23)  >= 21 && hour < 24
-	*/
-
-	// 0. night to early morning hour (night colors) moon is a hight
-	// this is done!
 	if (hour >= 0 && hour < 3) {
 		timeofdaypercent =  hour;
 		timeofdaypercent = (timeofdaypercent / 4) * 100;
@@ -90,8 +77,6 @@ function solarObjects(now, el1, el2, el3, el4) {
 		el3.style.background = "#002551";
 	}
 
-	// 1. night to early morning hour (night colors) moon is a setting
-	// this is done!
 	if (hour >= 3 && hour < 5) {
 		timeofdaypercent = hour;
 		timeofdaypercent = (timeofdaypercent / 4) * 100;
@@ -104,8 +89,6 @@ function solarObjects(now, el1, el2, el3, el4) {
 		el3.style.background = "#002551";
 	}
 
-	// 2. early morning hour (sunrise colors) sun is rising
-	// this is done!
 	if (hour >= 5 && hour < 9) {
 		timeofdaypercent = hour;
 		timeofdaypercent = 200 - (timeofdaypercent / 5) * 100;
@@ -118,8 +101,6 @@ function solarObjects(now, el1, el2, el3, el4) {
 		el3.style.background = `linear-gradient(to top, yellow ${hour}0%, red)`;
 	}
 
-	// 3. morning to noon (sky colors)
-	// this is done
 	if (hour >= 9 && hour < 12) {
 		timeofdaypercent = hour - 5;
 		timeofdaypercent = (timeofdaypercent / 7) * 100;
@@ -132,8 +113,6 @@ function solarObjects(now, el1, el2, el3, el4) {
 		el3.style.background  = "#87CEEB";
 	}
 
-	// 4. noonish to afternnon (sky colors)
-	// this is done
 	if (hour >= 12 && hour < 15) {
 		timeofdaypercent = hour - 12;
 		timeofdaypercent = (timeofdaypercent / 7) * 100;
@@ -146,8 +125,6 @@ function solarObjects(now, el1, el2, el3, el4) {
 		el3.style.background  = "#87CEEB";
 	}
 
-	// 5. evening to sunset (sky colors)
-	// this is done
 	if (hour >= 15 && hour < 18) {
 		timeofdaypercent = hour - 12;
 		timeofdaypercent = (timeofdaypercent / 7) * 100;
@@ -160,8 +137,6 @@ function solarObjects(now, el1, el2, el3, el4) {
 		el3.style.background  = "#87CEEB";
 	}
 
-	// 6. sunset (sunset colors)
-	// this is done
 	if (hour >= 18 && hour < 20) {
 		timeofdaypercent = hour - 12;
 		timeofdaypercent = (timeofdaypercent / 7) * 100;
@@ -171,11 +146,9 @@ function solarObjects(now, el1, el2, el3, el4) {
 		var moon = el1;
 		sun.style.top = sunheight + "px";
 		moon.style.top = "500px";
-		el3.style.background  = "linear-gradient(to top, #58151A, #BC2909, #BA6D09, #71A8EE, #3072EB, #002551, #002551)";
+		el3.style.background  = "linear-gradient(to top, #BC2909, #BA6D09, #71A8EE, #3072EB, #002551, #002551)";
 	}
 
-	// 7. early night (night colors)
-	// this is done!
 	if (hour >= 20 && hour < 22) {
 		timeofdaypercent = hour - 20;
 		timeofdaypercent = (timeofdaypercent / 5) * 100;
@@ -188,9 +161,7 @@ function solarObjects(now, el1, el2, el3, el4) {
 		el3.style.background  = "#002551";
 	}
 
-	// 8. night (night colors)
 	if (hour >= 22 && hour < 24) {
-		// this is done
 		timeofdaypercent = hour - 20;
 		timeofdaypercent = (timeofdaypercent / 5) * 100;
 		var moonheight = 200 - (timeofdaypercent * 2.5) + 50;
