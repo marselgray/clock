@@ -5,7 +5,7 @@ showSanFranTime();
 
 // calculate the time in San Francisco
 function showSanFranTime(){
-	// let date = new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
+	//let date = new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
 	let date = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
 	date = new Date(date);
 	var h = date.getHours(); // 0 - 23
@@ -176,14 +176,34 @@ function solarObjects(now, el1, el2, el3) {
 }
 
 
-
 // only puts stars into solar object container if sun is hidden aka night
-let sun = document.getElementsByClassName('solarcontainer--sun');
-for (let i = 0; i < sun.length; i++){
-	if (sun[i].style.top === '500px'){
-		makeStars(sun[i].parentElement);
+placeStars();
+function placeStars(){
+	let sun = document.getElementsByClassName('solarcontainer--sun');
+	for (let i = 0; i < sun.length; i++){
+		if (sun[i].style.top === '500px'){
+
+			// because it gets called every hour, we only want it to add stars if no stars exist
+			if (sun[i].classList[1] !== 'stars--exist') {
+				makeStars(sun[i].parentElement);
+				sun[i].classList.add('stars--exist');
+			}
+		}
 	}
 }
+
+// fixes bug: if the page is already loaded, the stars won't appears 
+// when they are suppose unless someone refreshes
+// hence this function gets called every hour and then places the stars
+function callEveryHour() {
+	//get the mins of the current time
+	var mins = new Date().getMinutes();
+	if (mins == 0) {
+		placeStars();
+	}
+}
+
+setInterval(callEveryHour, 1000 * 60 * 60);
 
 
 ////makes random stars in night sky
