@@ -198,9 +198,10 @@ function placeStars(){
 function callEveryHour() {
 	//get the mins of the current time
 	var mins = new Date().getMinutes();
-	if (mins == 0) {
+	console.log(mins);
+	if (mins == '0') {
 		placeStars();
-	}
+	} 
 }
 
 setInterval(callEveryHour, 1000 * 60 * 60);
