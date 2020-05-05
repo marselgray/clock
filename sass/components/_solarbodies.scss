@@ -17,6 +17,7 @@
 		left: 50%;
 		transform: translate(-50%);
 		transition: top 1s ease;
+		box-shadow: $light;
 
 		&__sunbeams {
 			width: 25rem;
@@ -32,6 +33,7 @@
 			height:3rem;
 			background: #FF8C00;
 			position:absolute;
+			box-shadow: 0 0 15px 10px rgba(#FF8C00, 0.4);
 
 			&-1{
 				transform: rotate(0deg);
@@ -99,6 +101,7 @@
 		transform: translate(-50%);
 		transition: top 1s ease;
 		z-index: 10;
+		box-shadow: $shadow;
 
 		&__crater {
 			position:absolute;
