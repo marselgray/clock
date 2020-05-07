@@ -5,10 +5,10 @@ showSanFranTime();
 
 // calculate the time in San Francisco
 function showSanFranTime(){
-	//let date = new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
 	let date = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
 	date = new Date(date);
 	var h = date.getHours(); // 0 - 23
+	//var h = 22;
 	var m = date.getMinutes(); // 0 - 59
 
 	h = (h < 10) ? "0" + h : h;
@@ -103,6 +103,8 @@ function solarObjects(now, el1, el2, el3) {
 		moon.style.top = "500px";
 		sun.style.top = sunheight + "px";
 		el3.style.background = `linear-gradient(to top, yellow ${hour}0%, red)`;
+	
+		removeStars();
 	}
 
 	if (hour >= 9 && hour < 12) {
@@ -115,6 +117,7 @@ function solarObjects(now, el1, el2, el3) {
 		sun.style.top = sunheight + "px";
 		moon.style.top = "500px";
 		el3.style.background  = "#87CEEB";
+
 	}
 
 	if (hour >= 12 && hour < 15) {
@@ -181,6 +184,14 @@ function solarObjects(now, el1, el2, el3) {
 		placeStars();
 	}
 
+}
+
+// solves if the clock is running and sun rises
+function removeStars(){
+	let stars = document.getElementsByClassName('star');
+	for (let i = 0; i < stars.length; i++){
+		stars[i].remove();
+	}
 }
 
 
