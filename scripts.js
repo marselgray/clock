@@ -75,6 +75,8 @@ function solarObjects(now, el1, el2, el3) {
 		moon.style.top = moonheight + "px";
 		sun.style.top = "500px";
 		el3.style.background = "#002551";
+
+		placeStars();
 	}
 
 	if (hour >= 3 && hour < 5) {
@@ -87,6 +89,8 @@ function solarObjects(now, el1, el2, el3) {
 		moon.style.top = moonheight + "px";
 		sun.style.top = "500px";
 		el3.style.background = "#002551";
+
+		placeStars();
 	}
 
 	if (hour >= 5 && hour < 9) {
@@ -159,6 +163,8 @@ function solarObjects(now, el1, el2, el3) {
 		moon.style.top = moonheight + "px";
 		sun.style.top = "500px";
 		el3.style.background  = "#002551";
+
+		placeStars();
 	}
 
 	if (hour >= 22 && hour < 24) {
@@ -171,13 +177,14 @@ function solarObjects(now, el1, el2, el3) {
 		moon.style.top = moonheight + "px";
 		sun.style.top = "500px";
 		el3.style.background  = "#002551";
+
+		placeStars();
 	}
 
 }
 
 
 // only puts stars into solar object container if sun is hidden aka night
-placeStars();
 function placeStars(){
 	let sun = document.getElementsByClassName('solarcontainer--sun');
 	for (let i = 0; i < sun.length; i++){
@@ -191,20 +198,6 @@ function placeStars(){
 		}
 	}
 }
-
-// fixes bug: if the page is already loaded, the stars won't appears 
-// when they are suppose unless someone refreshes
-// hence this function gets called every hour and then places the stars
-function callEveryHour() {
-	//get the mins of the current time
-	var mins = new Date().getMinutes();
-	console.log(mins);
-	if (mins == '0') {
-		placeStars();
-	} 
-}
-
-setInterval(callEveryHour, 1000 * 60 * 60);
 
 
 ////makes random stars in night sky
