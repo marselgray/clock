@@ -189,8 +189,10 @@ function solarObjects(now, el1, el2, el3) {
 // solves if the clock is running and sun rises
 function removeStars(){
 	let stars = document.getElementsByClassName('star');
-	for (let i = 0; i < stars.length; i++){
-		stars[i].remove();
+	if (stars){
+		for (let i = 0; i < stars.length; i++){
+			stars[i].remove();
+		}	
 	}
 }
 
