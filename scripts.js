@@ -104,7 +104,7 @@ function solarObjects(now, el1, el2, el3) {
 		sun.style.top = sunheight + "px";
 		el3.style.background = `linear-gradient(to top, yellow ${hour}0%, red)`;
 	
-		removeStars();
+		placeStars();
 	}
 
 	if (hour >= 9 && hour < 12) {
@@ -186,27 +186,27 @@ function solarObjects(now, el1, el2, el3) {
 
 }
 
-// solves if the clock is running and sun rises
-function removeStars(){
-	let stars = document.getElementsByClassName('star');
-	if (stars){
-		for (let i = 0; i < stars.length; i++){
-			stars[i].remove();
-		}	
-	}
-}
 
-
-// only puts stars into solar object container if sun is hidden aka night
 function placeStars(){
 	let sun = document.getElementsByClassName('solarcontainer--sun');
+	let stars = document.getElementsByClassName('star');
+
 	for (let i = 0; i < sun.length; i++){
 		if (sun[i].style.top === '500px'){
 
-			// because it gets called every hour, we only want it to add stars if no stars exist
 			if (sun[i].classList[1] !== 'stars--exist') {
 				makeStars(sun[i].parentElement);
 				sun[i].classList.add('stars--exist');
+			}
+		} else {
+	
+			if (sun[i].classList[1] == 'stars--exist') {
+				
+				if (stars){
+					for (let i = 0; i < stars.length; i++){
+						stars[i].remove();
+					}	
+				}
 			}
 		}
 	}
